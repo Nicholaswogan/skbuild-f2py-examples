@@ -1,4 +1,4 @@
-# skbuild f2py examples
+# skbuild-f2py-examples
 
 Here are some examples of how to use [skbuild](https://github.com/scikit-build/scikit-build), [CMake](https://cmake.org/), and [f2py](https://numpy.org/doc/stable/f2py/) together.
 
