@@ -19,8 +19,11 @@ find_package(F2PY REQUIRED)
 
 message(STATUS "F2PY included from: ${F2PY_INCLUDE_DIR}")
 
-set(f2py_module_name "_hello")
-set(fortran_src_file "${CMAKE_SOURCE_DIR}/hello/_hello.f90")
+# build goodbye
+add_library(interfaces "${CMAKE_SOURCE_DIR}/src/interfaces.f90")
+
+set(f2py_module_name "hello")
+set(fortran_src_file "${CMAKE_SOURCE_DIR}/src/hello.f90")
 set(generated_module_file ${f2py_module_name}${PYTHON_EXTENSION_MODULE_SUFFIX})
 
 add_custom_target(${f2py_module_name} ALL
@@ -42,12 +45,12 @@ add_library(${generated_module_file} MODULE
             "${f2py_module_name}-f2pywrappers2.f90"
              ${fortran_src_file})
 
+target_link_libraries(${generated_module_file} interfaces)
 target_include_directories(${generated_module_file} PUBLIC
                            ${F2PY_INCLUDE_DIRS}
                            ${PYTHON_INCLUDE_DIRS})
 set_target_properties(${generated_module_file} PROPERTIES SUFFIX "")
 set_target_properties(${generated_module_file} PROPERTIES PREFIX "")
-
 
 if (UNIX)
   if (APPLE)

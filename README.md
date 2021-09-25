@@ -8,6 +8,7 @@ Here are some examples of how to use [skbuild](https://github.com/scikit-build/s
 
 - **hello-fortran-dependency**: This uses the same build approach as **hello-fortran-cmaker**, except more complicated because a dependency is also built with CMake.
 
+- **hello-fortran-numba-callback**: This example is similar to **hello-fortran-dependency**, but shows how you to pass functions created in python, with `numba`, to the compiled fortran. The fortran can then call these functions.
 
 ## General notes
 - In the CMakesLists.txt you MUST find python related packages in the following order. Otherwise there are errors.

@@ -6,7 +6,7 @@ option(SKBUILD "Should be ON of being build by skbuild,
 and OFF of being build by regular cmake" OFF)
 
 if (NOT SKBUILD)
-  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake/")
+  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/../cmake/")
 endif()
 
 if (NOT CMAKE_BUILD_TYPE OR CMAKE_BUILD_TYPE STREQUAL "")
