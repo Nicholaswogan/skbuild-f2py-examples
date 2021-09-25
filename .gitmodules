@@ -1,0 +1,3 @@
+[submodule "cmake"]
+	path = .
+	url = https://github.com/scikit-build/scikit-build/tree/master/skbuild/resources/cmake
